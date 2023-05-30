@@ -1,6 +1,7 @@
-import { AppProps } from "next/app";
-import Head from 'next/head'
-import { createGlobalStyle } from "styled-components";
+import { AppProps } from "next/app"
+import Head from "next/head"
+import React from "react"
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 html,
@@ -27,16 +28,20 @@ textarea{
 `
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
+    <div>
       <Head>
         <meta key="charset" name="charset" content="utf-8" />
-        <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=5" />
+        <meta
+          key="viewport"
+          name="viewport"
+          content="width=device-width,  initial-scale=1, shrink-to-fit=no, maximum-scale=5"
+        />
         <meta property="og:locale" content="ja=JP" />
         <meta property="og:type" content="website" />
       </Head>
       <GlobalStyle />
       <Component {...pageProps} />
-    </>
+    </div>
   )
 }
 export default MyApp
